@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="app">
+        <header>
+            <h1>Training Tool</h1>
+            <div id="progress" class="muted"></div>
+        </header>
+
+        <section id="group-screen" class="screen">
+            <h2>Choose the groups to practice</h2>
+            <div id="groups"></div>
+            <button id="groups-continue" class="primary">Continue</button>
+        </section>
+
+        <section id="challenge-screen" class="screen hidden">
+            <h2>Choose a challenge</h2>
+            <div class="challenge-grid">
+                <button data-mode="question-answer" class="choice-button">
+                    <strong>Question → Answer</strong>
+                    <span>Say the answer before revealing it.</span>
+                </button>
+                <button data-mode="answer-question" class="choice-button">
+                    <strong>Answer → Question</strong>
+                    <span>Say the question before revealing it.</span>
+                </button>
+                <button data-mode="multiple-choice" class="choice-button">
+                    <strong>Multiple Choice</strong>
+                    <span>Choose the correct answer from several choices.</span>
+                </button>
+                <button data-mode="fill-blank" class="choice-button">
+                    <strong>Fill in the Blank</strong>
+                    <span>Say the missing words before revealing the answer.</span>
+                </button>
+            </div>
+            <button id="back-to-groups" class="secondary">Back</button>
+        </section>
+
+        <section id="practice-screen" class="screen hidden">
+            <div id="practice-card">
+                <div id="group-label" class="muted"></div>
+                <div id="prompt"></div>
+                <div id="choices"></div>
+                <div id="answer" class="answer hidden"></div>
+                <button id="show-answer" class="primary">Show Answer</button>
+                <button id="next-question" class="primary hidden">Next Question</button>
+                <button id="change-selection" class="secondary">Change Selection</button>
+            </div>
+        </section>
+
+        <section id="finished-screen" class="screen hidden">
+            <h2>Finished</h2>
+            <p>You have completed this practice session.</p>
+            <button id="again" class="primary">Practice Again</button>
+            <button id="change-selection-finished" class="secondary">Change Selection</button>
+        </section>
+    </main>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

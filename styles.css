@@ -1,0 +1,169 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f4f6;
+    color: #202124;
+}
+
+main {
+    width: min(900px, 94%);
+    margin: 0 auto;
+    padding: 24px 0 50px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 { margin-bottom: 4px; }
+h2 { text-align: center; }
+
+.screen {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+.hidden { display: none !important; }
+
+.muted {
+    color: #666;
+    font-size: .95rem;
+}
+
+#groups {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.group-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 14px;
+    cursor: pointer;
+}
+
+.group-option:hover { background: #f8f8f8; }
+
+.group-option input {
+    width: 22px;
+    height: 22px;
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    padding: 13px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.primary {
+    background: #2457a6;
+    color: white;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.secondary {
+    background: #e7e7e7;
+    color: #222;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.challenge-grid {
+    display: grid;
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.choice-button {
+    background: #f7f8fa;
+    border: 2px solid #ddd;
+    text-align: left;
+    padding: 18px;
+}
+
+.choice-button:hover {
+    border-color: #2457a6;
+}
+
+.choice-button strong,
+.choice-button span {
+    display: block;
+}
+
+.choice-button span {
+    margin-top: 6px;
+    color: #666;
+}
+
+#practice-card {
+    text-align: center;
+}
+
+#prompt {
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 35px 0;
+}
+
+.answer {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    padding: 20px;
+    background: #f0f5ff;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+#choices {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.answer-choice {
+    background: white;
+    border: 2px solid #ccc;
+    text-align: left;
+    padding: 15px;
+}
+
+.answer-choice.correct {
+    border-color: #27834a;
+    background: #eef9f1;
+}
+
+.answer-choice.incorrect {
+    border-color: #b33a3a;
+    background: #fff0f0;
+}
+
+.blank {
+    display: inline-block;
+    min-width: 90px;
+    border-bottom: 3px solid #333;
+    margin: 0 3px;
+}
+
+@media (max-width: 600px) {
+    main { padding-top: 12px; }
+    .screen { padding: 18px; }
+    button { font-size: 1.05rem; }
+}
