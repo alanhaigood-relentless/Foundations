@@ -167,3 +167,24 @@ button:disabled {
     .screen { padding: 18px; }
     button { font-size: 1.05rem; }
 }
+
+.obscured-answer {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 1.35rem;
+    line-height: 1.5;
+}
+
+.fill-section {
+    margin: 24px 0;
+    font-size: 1.35rem;
+    line-height: 1.5;
+}
+.fill-label {
+    font-size: .9rem;
+    font-weight: 700;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
