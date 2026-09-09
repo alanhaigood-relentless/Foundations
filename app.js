@@ -127,6 +127,9 @@ function showCurrentQuestion() {
     answer.classList.add("hidden");
     answer.innerHTML = "";
     showAnswer.classList.remove("hidden");
+    showAnswer.textContent = selectedMode === "answer-question"
+        ? "Show Question"
+        : "Show Answer";
     nextQuestion.classList.add("hidden");
 
     if (selectedMode === "question-answer") {
@@ -141,18 +144,40 @@ function showCurrentQuestion() {
         showAnswer.classList.add("hidden");
     }
     else if (selectedMode === "fill-blank") {
-        prompt.innerHTML = makeObscuredHtml(currentQuestion.obscured);
+        prompt.innerHTML = `
+            <div class="fill-section">
+                <div class="fill-label">Question</div>
+                <div id="fill-question">${makeObscuredHtml(
+                    currentQuestion.obscuredQuestion || currentQuestion.question
+                )}</div>
+            </div>
+            <div class="fill-section">
+                <div class="fill-label">Answer</div>
+                <div id="fill-answer">${makeObscuredHtml(
+                    currentQuestion.obscuredAnswer || currentQuestion.obscured || currentQuestion.answer
+                )}</div>
+            </div>
+        `;
     }
 }
 
 function revealAnswer() {
     if (selectedMode === "answer-question") {
         answer.textContent = currentQuestion.question;
-    } else {
+        answer.classList.remove("hidden");
+    }
+    else if (selectedMode === "fill-blank") {
+        const fillQuestion = document.getElementById("fill-question");
+        const fillAnswer = document.getElementById("fill-answer");
+
+        if (fillQuestion) fillQuestion.textContent = currentQuestion.question;
+        if (fillAnswer) fillAnswer.textContent = currentQuestion.answer;
+    }
+    else {
         answer.textContent = currentQuestion.answer;
+        answer.classList.remove("hidden");
     }
 
-    answer.classList.remove("hidden");
     showAnswer.classList.add("hidden");
     nextQuestion.classList.remove("hidden");
 }
