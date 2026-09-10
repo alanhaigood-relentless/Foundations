@@ -8,7 +8,7 @@ The easiest local test is to open `index.html` directly in a browser.
 
 To edit the training material, open `questions.js`.
 
-Each item looks like:
+Each item looks like: 
 
 {
     group: "Group 1",
